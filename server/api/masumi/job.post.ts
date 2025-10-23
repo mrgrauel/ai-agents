@@ -19,8 +19,8 @@ export default defineEventHandler(async (event) => {
       },
     });
     return {
+      id: job.id,
       status: "success",
-      job_id: job.id,
     };
   } catch (error) {
     throw createError({
