@@ -9,6 +9,6 @@ export const prisma =
     // log: ['query', 'info', 'warn', 'error'], // enable if needed
   });
 
-if (process.env.NODE_ENV !== 'production') {
+if (Bun.env.ENV !== 'production') {
   globalForPrisma.prisma = prisma;
 }
