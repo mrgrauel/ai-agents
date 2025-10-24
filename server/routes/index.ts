@@ -1,8 +1,6 @@
-import { eventHandler } from "h3"
-
 // Learn more: https://nitro.build/guide/routing
-export default eventHandler((event) => {
-  return `
+export default eventHandler(() => {
+	return `
       <meta charset="utf-8">
       <h1>This is your brand new Nitro project 🚀 </h1>
       <p>Get started by editing the <code>server/routes/index.ts</code> file.</p>

@@ -1,1 +1,1 @@
-export { default } from './jobs/index.post'
+export { default } from "./jobs/index.post";
