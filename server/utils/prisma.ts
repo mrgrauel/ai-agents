@@ -24,4 +24,5 @@ const prisma = global.prismaGlobal ?? prismaClientSingleton();
 
 export default prisma;
 
-if (useRuntimeConfig().environment !== "production") global.prismaGlobal = prisma;
+if (useRuntimeConfig().environment !== "production")
+	global.prismaGlobal = prisma;
