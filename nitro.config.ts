@@ -11,6 +11,7 @@ export default defineNitroConfig({
   runtimeConfig: {
     // Server-only variables (private)
     databaseUrl: process.env.DATABASE_URL,
+    environment: process.env.NODE_ENV || "development",
     
     // Public variables (accessible on client-side too)
     public: {

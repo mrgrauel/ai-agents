@@ -1,4 +1,4 @@
-import { prisma } from "../db";
+import prisma from "../prisma";
 
 export const jobsService = {
      getJobById: async (id: string) => {
