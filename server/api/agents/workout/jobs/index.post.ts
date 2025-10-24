@@ -1,5 +1,4 @@
-import { defineEventHandler } from "h3";
-import { prisma } from '../../utils/prisma';
+
 import { JobStatus } from "@prisma/client";
 
 export default defineEventHandler(async (event) => {
@@ -10,7 +9,6 @@ export default defineEventHandler(async (event) => {
       statusMessage: "input_data is required",
     });
   }
-
   try {
     const job = await prisma.job.create({
       data: {
@@ -23,6 +21,7 @@ export default defineEventHandler(async (event) => {
       status: "success",
     };
   } catch (error) {
+    console.error("error starting job", error);
     throw createError({
       statusCode: 500,
       statusMessage: "failed to start job",
