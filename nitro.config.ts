@@ -6,6 +6,7 @@ export default defineNitroConfig({
   srcDir: "server",
   imports: {
     autoImport: true, // Enable auto-imports for Nitro utilities like useRuntimeConfig
+    dts: true,
   },
   runtimeConfig: {
     // Server-only variables (private)

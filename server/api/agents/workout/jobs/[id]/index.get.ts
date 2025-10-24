@@ -6,21 +6,5 @@ export default defineEventHandler(async (event) => {
             statusMessage: "id is required",
         });
     }
-    try {
-        const job = await prisma.job.findUniqueOrThrow({
-            where: { id },
-        });
-        console.log("job", job);
-        return {
-            id: job.id,
-                status: job.status.toLowerCase(),
-                result: job.output,
-            };
-    } catch (error) {
-        console.error("error getting job", error);
-        throw createError({
-            statusCode: 500,
-            statusMessage: "failed to get job",
-        });
-    }
+    return await jobsService.getJobById(id);
 });

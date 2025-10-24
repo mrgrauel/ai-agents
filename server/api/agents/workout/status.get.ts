@@ -1,6 +1,4 @@
-import { sendRedirect } from 'h3'
-
-export default defineEventHandler((event) => {
+export default defineEventHandler(async(event) => {
     const id = getQuery(event).job_id?.toString();
     if (!id) {
         throw createError({
@@ -8,5 +6,5 @@ export default defineEventHandler((event) => {
             statusMessage: "job_id is required",
         });
     }
-  return sendRedirect(event, `/api/agents/workout/jobs/${id}`, 307)
+    return await jobsService.getJobById(id);
 })
